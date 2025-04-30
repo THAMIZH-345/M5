@@ -1,3 +1,7 @@
+NAME: TAMILSELVAN R
+
+REG NO: 212224060275
+
 EX-21-POINTERS
 # AIM:
 Write a C program to convert a 23.65 into 25 using pointer
@@ -9,7 +13,25 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+ 
+    double num = 23.65;
+
+
+    double *ptr = &num;
+
+   
+    *ptr = 25.0;
+
+   
+    printf("Modified value: %.2f\n", num);
+
+    return 0;
+}
+```
 ## OUTPUT:
  	
 
@@ -17,6 +39,7 @@ Write a C program to convert a 23.65 into 25 using pointer
 
 
 
+![WhatsApp Image 2025-04-30 at 23 07 38_e50bd516](https://github.com/user-attachments/assets/63e88076-2d2d-46f3-9162-c3379240ffb0)
 
 
 
@@ -45,8 +68,34 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+
+unsigned long long calculateProduct(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * calculateProduct(n - 1);  
+}
+
+int main() {
+    int n = 12;  
+    unsigned long long product;
+
+   
+    product = calculateProduct(n);
+
+   
+    printf("Product of the first 12 natural numbers is: %llu\n", product);
+
+    return 0;
+}
+```
 ## OUTPUT:
-         		
+![WhatsApp Image 2025-04-30 at 23 08 17_ef47eb2aM5](https://github.com/user-attachments/assets/83f4b240-663e-4fd9-a5f5-cc98b6d11e61)
+
+
 ## RESULT:
 
 Thus the program has been executed successfully.
@@ -68,6 +117,31 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+int main() {
+    
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int i, j, sum;
+
+  
+    for (i = 0; i < 3; i++) {
+        sum = 0;
+        for (j = 0; j < 3; j++) {
+            sum += matrix[i][j];
+        }
+        printf("Sum of row %d = %d\n", i + 1, sum);
+    }
+
+    return 0;
+}
+```
 
 
 
@@ -75,7 +149,8 @@ Write C Program to find Sum of each row of a Matrix
 
 
  
- 
+ ![WhatsApp Image 2025-04-30 at 23 08 46_410f6765](https://github.com/user-attachments/assets/44782e3d-5eca-4ce2-9f9c-1632f2c2a68f)
+
 
  ## RESULT
  
@@ -96,11 +171,49 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int num_rows, i, j, k = 0;
+
+    // Step 1: Input string and number of rows
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Enter number of rows: ");
+    scanf("%d", &num_rows);
+
+    int len = strlen(str);
+
+    // Step 3: Loop through rows
+    for (i = 1; i <= num_rows; i++) {
+        // Step 4: Print leading spaces
+        for (j = 1; j <= num_rows - i; j++) {
+            printf(" ");
+        }
+
+        // Step 5: Print characters from string
+        for (j = 1; j <= i; j++) {
+            printf("%c ", str[k % len]);  // Repeat if shorter than needed
+            k++;
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
 
  ## OUTPUT
 
  
+
+![WhatsApp Image 2025-04-30 at 23 09 20_9104dda9](https://github.com/user-attachments/assets/b3220221-76b2-4a3b-80a6-0359140bf1fa)
 
 ## RESULT
 
@@ -132,8 +245,41 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    int i, n;
+    int arr[10];
+    int *parr = arr;
+
+  
+    printf("Enter number of elements (up to 6): ");
+    scanf("%d", &n);
+
+    if (n > 6) {
+        printf("Please enter up to 6 elements only.\n");
+        return 1;
+    }
+
+    printf("Enter %d integer elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", parr + i);
+    }
+
+
+    printf("The elements of the array are:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", *(parr + i));
+    }
+    printf("\n");
+
+    return 0;
+}
+```
 
 ## OUTPUT
+![WhatsApp Image 2025-04-30 at 23 10 19_99361bc8](https://github.com/user-attachments/assets/9f73d3c4-1f01-4c7a-a198-5b798bb566f2)
 
  
 
